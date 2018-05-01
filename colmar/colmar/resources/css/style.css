@@ -1,0 +1,782 @@
+
+
+/* latin */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v9/vEFV2_5QCwIS4_Dhez5jcWBuT0020Nqf.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Philosopher Bold'), local('Philosopher-Bold'), url(https://fonts.gstatic.com/s/philosopher/v9/vEFI2_5QCwIS4_Dhez5jcWjValgb8te1Xb7G.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html {
+/* color scheme */
+
+/* 3 light analagous background colors */
+  --bg-color1: white;
+  --bg-color2: #e0e0d3;
+  --bg-color3: #d3d9e0;
+
+/* 1 main bright color and analagous faded one. */
+  --theme-color: #5535d4;
+  --faded-theme-color: #6640ff;
+  --theme-color2: ;
+
+/* 2 text colors: 1 light, 1 dark */
+  --light-txt-color: white; /* alternate should be white */
+  --dark-txt-color: black; /* alternate should be black */
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: var(--bg-color1);
+}
+
+.site-container {
+  max-width: 1024px; /* max-width rather than width so that sections can react to browser size changes. */
+  margin-left: auto; /* These horizontally center the .site-container in the browser. */
+  margin-right: auto;
+}
+
+h2 {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 32px;
+  font-size: 2rem;
+  padding-top: 32px;
+  padding-top: 2rem;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+  text-align: center; /* redline shows this left-aligned which doesn't look as good, to me. */
+}
+
+h3 {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 32px;
+  padding-top: 2rem;
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
+  text-align: center; /* Looks nicer than the left-aligned heading specified */
+}
+
+h4 {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
+}
+
+h5 {
+  font-family: 'Philosopher', sans-serif;
+  line-height: 1.2;
+  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
+}
+
+h6 {
+  display: block;
+  text-align: center; /* Looks nicer than the left-aligned heading specified */
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+  padding-top: 32px;
+  padding-top: 2rem;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+blockquote {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.2;
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
+}
+
+/*   <!------ Header Page ------>   */
+@media only screen and (min-width: 761px) {
+
+header { /* header contains grandchildren #logo and nav */
+  position: fixed;
+  z-index: 100;
+  height: 4rem;
+  width: 100%;
+  background-color: var(--theme-color);
+  border-bottom: 1rem solid var(--dark-bg-color); /* added so the header doesn't look weird on scrolling. */
+}
+
+#desktop-header-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* flex rather than inline-flex as we want it to span the whole page. */
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; /* Put #logo at one end and nav at other. */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Center content (#logo and nav) vertically. */
+  height: 100%; /* same height as header */
+}
+
+#desktop-header-page #logo {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;  /* Center logo and text vertically. */
+  padding-left: 1.5rem;
+  font-size: 2rem;
+  font-family: 'Philosopher', sans-serif;
+}
+
+#desktop-header-page img {
+  height: 3rem; /* icon - redline says 2rem but that looks very small */
+  margin-right: 0.5rem; /* not specified in redline, but it looks less crowded this way */
+}
+
+#logo #colmar {
+  font-weight: 700;
+  color: var(--dark-txt-color, black);
+}
+
+#logo #academy {
+  font-weight: 400;
+  color: var(--light-txt-color, white);
+}
+
+header nav {
+  background-color: var(--bg-color1); /* this gives us the color stripe in navigation items' margin */
+  margin-right: 0.5rem; /* space required by redline is 1.5rem but we have 1rem in padding-right on 'nav a' items */
+}
+
+/* the redline shows no space between color stripes and navigation items, but
+this looks crowded and inaccessible, so I've added space. */
+header a {
+  display: inline-block; /* allows us to manipulate size of inline element */
+  color: var(--light-txt-color, white);
+  background-color: var(--theme-color); /* background color for text extends through padding but not margin */
+  height: 4rem; /* extends the background color from top to bottom */
+  line-height: 4rem; /* vertically centers the text */
+  margin-left: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+header nav a:first-child {
+  margin-left: 0; /* this removes the color bar on the left of the navigation section */
+}
+
+header a:hover {
+  color: var(--dark-txt-color, black);
+}
+
+  .mobile {
+    display: none;
+  }
+}
+
+/* This prevents the header from wrapping as the screen gets smaller before the text is replaced with icons. */
+@media only screen and (max-width: 900px) {
+    #colmar, #academy {
+      font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .desktop {
+    display: none;
+  }
+
+  #mobile-header-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; /* flex rather than inline-flex as we want it to span the whole page. */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; /* Center content vertically. */
+    height: 100%; /* same height as header */
+    background-color: var(--theme-color);
+    height: 4rem;
+    width: 100%;
+  }
+
+}
+
+/*   <!------ Landing Page ------>   */
+
+/* The specs specify 60% width for img, and 40% width for text section but we need to include margins/borders/padding */
+
+#landing-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: var(--bg-color2);
+}
+
+#landing-page img {
+  width: 55%; /* 55% plus borders = 611.2px (59.6875% of site-container) */
+  height: auto;
+  margin-top: 96px;
+  margin-top: 6rem; /* 4rem to account for fixed header height and 2rem margin */
+  margin-right: 24px;
+  margin-right: 1.5rem;
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  margin-left: 24px;
+  margin-left:1.5rem;
+}
+
+#landing-page div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 35%;
+  height: auto;
+  color: var(--light-bg-color);
+  background-color: var(--bg-color2);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#landing-page p {
+  text-align: center;
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
+}
+
+#landing-page button { /* the button is less basic than the one shown on the redline */
+  color: var(--light-txt-color, white);
+  background-color: var(--theme-color);
+  padding: 8px 48px;
+  margin: 16px 0;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px black;
+}
+
+#landing-page button:hover {
+  color: var(--light-txt-color, white);
+  background-color: var(--faded-theme-color);
+}
+
+@media only screen and (max-width: 760px) {
+  #landing-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* justify-content: flex-start; */
+    /* align-items: center; */
+    width: 100%;
+    background-color: var(--bg-color2);
+  }
+
+  #landing-page img {
+    width: 100%;
+    margin: 0;
+  }
+
+  #landing-page div {
+    width: 95.789%; /* At 760px wide with 1rem side paddings, the width is 95.7894737% */
+    padding: 2rem 1rem;
+  }
+
+  #landing-page h2 {
+    padding-top: 0;
+  }
+}
+
+/*   <!------ Practicing Page ------>   */
+
+#practicing-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-color: var(--bg-color1);
+}
+
+#practicing-page .col1 {
+  width: 55.3125%; /* Redline says 60%, but margins take up some of the space and this represents size of image */
+  height: auto;
+  padding: 32px 24px;
+  padding: 2rem 1.5rem;
+}
+
+#practicing-page .col1 img {
+  width: 100%;
+}
+
+#practicing-page h3 {
+  color: var(--dark-txt-color, black);
+}
+
+#practicing-page .col2 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 38.4375%; /* col2 width excluding margins as a percentage of whole site width */
+  height: auto;
+  padding-top: 16px;
+  padding-top: 1rem; /* used to put pictures in col1 and col2 at same height */
+}
+
+#practicing-page .col2 article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+#practicing-page .col2 img {
+  max-width: 35%;
+  height: auto;
+  overflow: hidden;
+  padding: 16px;
+  padding: 1rem;
+}
+
+#practicing-page .col2 article:last-child {
+  background-color: var(--bg-color2);
+}
+
+/*  These were not shown as buttons in the redline, but they show up better this way, and look more professional. */
+#practicing-page button {
+  color: var(--light-txt-color, white);
+  background-color: var(--theme-color);
+  padding: 8px 48px;
+  margin: 8px 0;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px black;
+}
+
+#practicing-page button:hover {
+  color: var(--light-txt-color, white);
+  background-color: var(--faded-theme-color);
+}
+
+@media only screen and (max-width: 760px) {
+  #practicing-page .col1 {
+    display: none;
+  }
+
+  #practicing-page .col2 {
+    /* max-width: 760px; */
+    width: 100%;
+    padding: 0;
+  }
+
+  #practicing-page .col2 article {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+                -ms-grid-row-align: flex-start;
+            align-items: flex-start;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    /* width: 95.789%; */
+    height: auto;
+  }
+
+  #practicing-page .col2 article:last-child {
+    background-color: var(--bg-color1);
+    padding-bottom: 2rem;
+  }
+
+  #practicing-page .col2 img {
+    max-width: 100%; /* This is to overwrite the inherited value for max-width. */
+    width: 100%;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 1rem;
+    padding-left: 0;
+  }
+
+  #practicing-page .col2 div {
+    padding-left: 1rem;
+  }
+}
+
+/*   <!------ Learning Page ------>   */
+
+#learning-page {
+  background-color: var(--bg-color2);
+  z-index: 30;
+  padding-left: 56px;
+  padding-left: 3.5rem; /* not actually required as it's done automatically */
+  padding-right: 56px;
+  padding-right: 3.5rem;
+}
+
+#learning-page h6 {
+  color: var(--theme-color);
+  background-color: var(--bg-color2);
+}
+
+#gallery-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* padding-top: 2rem; */
+}
+
+#gallery-section article {
+  display: inline-block;
+  border: 5px ridge #2E2B10;
+  margin-left: 16px;
+  margin-left: 1rem;
+  margin-right: 16px;
+  margin-right: 1rem;
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  /* width: 17rem; *//* site-container minus img widths and margins divided by 3 */
+  width: 242px;
+  width: 15.125rem; /* reduced width to accomodate article borders */
+  overflow: hidden;
+}
+
+/*
+#gallery-article-1 {
+    transform: rotate(3deg);
+    box-shadow: 4px 4px 6px black;
+}
+#gallery-article-2 {
+    transform: rotate(-12deg);
+    box-shadow: 4px 4px 6px black;
+}
+#gallery-article-3 {
+    transform: rotate(17deg);
+    box-shadow: 4px 4px 6px black;
+}
+#gallery-article-4 {
+    transform: rotate(-15deg);
+    box-shadow: 4px 4px 6px black;
+}
+#gallery-article-5 {
+    transform: rotate(25deg);
+    box-shadow: 4px 4px 6px black;
+}
+#gallery-article-6 {
+    transform: rotate(-5deg);
+    box-shadow: 4px 4px 6px black;
+}
+*/
+
+#gallery-section article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#gallery-section article .text {
+  height: 130px;
+  height: 8.125rem;
+  padding-top: 16px;
+  padding-top: 1rem;
+  padding-left: 16px;
+  padding-left: 1rem;
+  padding-right: 16px;
+  padding-right: 1rem;
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
+  background-color: var(--bg-color1);
+}
+
+@media only screen and (max-width: 740px) {
+  #learning-page h6 {
+    padding-bottom: 1rem;
+  }
+  #gallery-section article .text {
+    height: auto;
+  }
+  #gallery-section article img {
+    display: none;
+  }
+  #gallery-section h5, #gallery-section p {
+    display: none;
+  }
+  #gallery-section article {
+    /* The redline does not include any accomodation for borders. Padding and margins have been preserved here, so border widths constitute additional distance that could be eliminated if required. */
+    margin-bottom: .5rem;
+    width: 15.125rem; /* reduced width to accomodate article borders */
+  }
+}
+
+/*   <!------ Thesis Page ------>   */
+
+#thesis-page { /* h6 heading plus thesis-body video & text columns */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  background-color: var(--bg-color1);
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+  z-index: 40;
+}
+
+#thesis-page h6 {
+  color: var(--theme-color);
+  background-color: var(--bg-color1);
+}
+
+#thesis-body { /* col1 and col2 */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#thesis-body .col1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 24px;
+  margin-left: 1.5rem;
+  margin-right: 24px;
+  margin-right: 1.5rem;
+  width: 57.19%; /* 60% of [full site-container (1024px) minus the margins (48px)] */
+}
+
+/* width and height set here so percentages can be used and video size is responsive to browser size. */
+video {
+  width: 98.29%; /* video + borders = 100% of .col1 */
+  height: auto;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; /* separates video from text */
+  border: 5px ridge #2E2B10; /* border not specified, but it makes the video 'pop'. */
+}
+
+#thesis-body .col2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; /* Put contents at top */
+  width: 38.125%; /* 40% of full browser window minus the margins */
+  height: auto;
+}
+
+#thesis-body .col2 article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+#thesis-body .col2 article:first-child {
+  background-color: var(--bg-color2);
+  color: var(--light-txt-color, white);
+}
+
+#thesis-body .col2 img {
+  width: 35%; /* 35% of .col2 */
+  height: auto;
+  padding-right: 16px;
+  padding-right: 1rem;
+}
+
+#thesis-body .col2 article div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (max-width: 740px) {
+  #thesis-page {
+    padding-bottom: 0;
+  }
+
+  #thesis-page h6 {
+    padding-bottom: 1rem;
+  }
+
+  #thesis-body .col2, .col1>div {
+    display: none;
+  }
+
+  #thesis-body .col1 {
+    width: 100%; /* 100% of browser */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  video {
+    width: 98.65%; /* border + video = 100% of browser & col1 */
+  }
+}
+
+/*   <!------ Footer Page ------>   */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 16px;
+  padding-top: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem;
+  /* height: 3rem; */
+  color: var(--dark-txt-color, black);
+  background-color: var(--bg-color2);
+}
+
+footer span {
+  padding-left: 24px;
+  padding-left: 1.5rem;
+}
+
+footer nav {
+  margin-right: 24px;
+  margin-right: 1.5rem;
+}
+
+footer a {
+  color: var(--dark-txt-color, black);
+  margin-left: 16px;
+  margin-left: 1rem;
+}
